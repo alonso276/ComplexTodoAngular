@@ -1,0 +1,25 @@
+<!-- hacemos una tarea, le damos estilo y repetimos -->
+
+<div class="lista">
+  <div
+    class="tarea"
+    *ngFor="let tarea of tareas; let indice = index"
+    [ngClass]="{ completa: tarea.completa, incompleta: !tarea.completa }"
+  >
+    <h3>{{ tarea.titulo }}</h3>
+    <p>{{ tarea.descripcion }}</p>
+
+    <!-- directamente le paso referencia al objeto con el que quiero trabajar -->
+    <button (click)="onClick(tarea)">
+      {{ tarea.completa ? "COMPLETA" : "INCOMPLETA" }}
+    </button>
+
+    <!-- borrar tarea buscar índice -->
+
+    <button (click)="onClickBorrar(indice)">Borrar</button>
+  </div>
+</div>
+
+<!-- <p *ngFor="let tarea of tareas">
+  {{ tarea.titulo }}
+</p> -->

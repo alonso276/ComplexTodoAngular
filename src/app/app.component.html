@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="izquierda">
+    <!-- para que la tarea llegue a app component desde el padre se captura el evento que está emitiendo el hijo -->
+    <!-- es importante que capturemos el event en el output -->
+    <app-formulario (tareaCreada)="onTareaCreada($event)"> </app-formulario>
+  </div>
+  <div class="derecha">
+    <!-- al input tareas le paso el array tareas generado en el padre -->
+    <!-- ponemos corchetes al pasarle una variable o un método js -->
+    <app-lista [tareas]="arrTareas"></app-lista>
+  </div>
+</div>
